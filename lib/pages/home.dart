@@ -17,156 +17,156 @@ class _HomeState extends State<Home> {
           bottom: false,
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.all(25),
-              child: Column(
+              padding: EdgeInsets.symmetric(horizontal: 25),
+              child: Stack(
                 children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: "Enter location",
-                        icon: Icon(
-                          Icons.location_on,
-                          color: Colors.black,
-                          size: 29,
-                        ),
-                        hintStyle: TextStyle(
-                          fontWeight: FontWeight.w500,
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
+                  Positioned(
+                    left: 0,
+                    child: GestureDetector(
+                      onTap: () => {Navigator.pop(context)},
+                      child: Container(
+                        decoration: BoxDecoration(
                             color: Colors.black,
-                          ),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Icon(
+                          Icons.arrow_left,
+                          size: 40,
+                          color: Colors.white,
                         ),
-                        border: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black))),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Text(
-                    "Accra",
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 35),
-                  ),
-                  SizedBox(
-                    height: 7,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(15)),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 5,
-                    ),
-                    child: Text(
-                      "Friday, 20 January",
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Color.fromARGB(255, 255, 224, 66),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "Rain",
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  Text(
-                    "31°",
-                    style: TextStyle(
-                      fontSize: 130,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        "Daily Summary",
+                        "Accra",
                         style: TextStyle(
-                            fontWeight: FontWeight.w900, fontSize: 18),
+                            fontWeight: FontWeight.w600, fontSize: 35),
+                      ),
+                      SizedBox(
+                        height: 7,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(15)),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
+                        child: Text(
+                          "Friday, 20 January",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Color.fromARGB(255, 255, 224, 66),
+                          ),
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       Text(
-                        "Now it seems that +25, in fact +28°",
+                        "Rain",
                         style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 13),
+                            fontWeight: FontWeight.w700, fontSize: 20),
                       ),
                       SizedBox(
-                        height: 5,
+                        height: 25,
                       ),
                       Text(
-                        "It's humid now because of the heaw rain Today.",
+                        "31°",
                         style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 13),
+                          fontSize: 130,
+                        ),
                       ),
                       SizedBox(
-                        height: 5,
+                        height: 25,
                       ),
-                      Text(
-                        "the temperature is felt in the rande from +31°to 27°",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 13,
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            "Daily Summary",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w900, fontSize: 18),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Now it seems that +25, in fact +28°",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 13),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "It's humid now because of the heaw rain Today.",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 13),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "the temperature is felt in the rande from +31°to 27°",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 13,
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(10)),
+                            padding: EdgeInsets.symmetric(vertical: 15),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InfoTab(),
+                                InfoTab(),
+                                InfoTab(),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Weekly forecast",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w900, fontSize: 18),
+                          ),
+                          Image.asset(
+                            "assets/arrow.png",
+                            height: 40,
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ForecastTab(),
+                          ForecastTab(),
+                          ForecastTab(),
+                          ForecastTab(),
+                        ],
                       )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(10)),
-                        padding: EdgeInsets.symmetric(vertical: 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InfoTab(),
-                            InfoTab(),
-                            InfoTab(),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Weekly forecast",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w900, fontSize: 18),
-                      ),
-                      Image.asset(
-                        "assets/arrow.png",
-                        height: 40,
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ForecastTab(),
-                      ForecastTab(),
-                      ForecastTab(),
-                      ForecastTab(),
                     ],
                   )
                 ],
